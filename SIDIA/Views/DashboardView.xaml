@@ -5,11 +5,153 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SIDIA.View"
         xmlns:viewModel="clr-namespace:SIDIA.ViewModels"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        xmlns:customControl="clr-namespace:SIDIA.CustomControls"
         mc:Ignorable="d"
         Title="MainWindowView" Height="700" Width="1300"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True">
-    
+
+    <Window.DataContext>
+        <viewModel:LoginViewModel/>
+    </Window.DataContext>
+
+    <Border CornerRadius="30"
+            BorderBrush="MediumSlateBlue"
+            BorderThickness="5">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <!--Navigation Menu-->
+                <StackPanel Orientation="Horizontal"
+                                Height="50"
+                                Margin="15,25,0,40"
+                            Grid.Column="0"
+                            Grid.Row="0">
+
+                    <Image Source="pack://application:,,,/Images/logo_mini.png" Height="40"/>
+                    <Image Source="pack://application:,,,/Images/logo.png" Height="20" Margin="23,0,0,0"/>
+
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="0">
+                    <!--Logo-->
+
+                    <!--Menu Buttons-->
+                    <RadioButton Height="50"
+                                 Margin="-5, 0, 0, 5"
+                                 Background="Transparent"
+                                 Foreground="#383839"
+                                 BorderBrush="Transparent">
+
+                        
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="pack://application:,,,/Images/barang.png" 
+                                   Height="30"
+                                   Margin="20,0,20,0"/>
+                            <TextBlock Text="Kelola Barang"
+                                       Foreground="#FFFFFF"
+                                       FontSize="20"
+                                       FontFamily="Montserrat"
+                                       FontWeight="Medium"
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton Height="50"
+                                 Margin="-5, 0, 0, 5"
+                                 Background="Transparent"
+                                 Foreground="#383839"
+                                  BorderBrush="Transparent">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="pack://application:,,,/Images/Worker.png" 
+                                   Height="30"
+                            Margin="20,0,20,0"/>
+                            <TextBlock Text="Kelola Pegawai"
+                                       Foreground="#FFFFFF"
+                                       FontSize="20"
+                                       FontFamily="Montserrat"
+                                       FontWeight="Medium"
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton Height="50"
+                                 Margin="-5, 0, 0, 5"
+                                 Background="Transparent"
+                                 Foreground="#383839"
+                                 BorderBrush="Transparent">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="pack://application:,,,/Images/admin.png" 
+                                   Height="30" 
+                                   Margin="20,0,20,0"/>
+                            <TextBlock Text="Kelola Admin"
+                                       Foreground="#FFFFFF"
+                                       FontSize="20"
+                                       FontFamily="Montserrat"
+                                       FontWeight="Medium"
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton Height="50"
+                                 Margin="-5, 350, 0, 5"
+                                 Background="Transparent"
+                                 Foreground="#383839"
+                                 BorderBrush="Transparent">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="pack://application:,,,/Images/settings.png" 
+                                   Height="30" 
+                                   Margin="20,0,20,0"/>
+                            <TextBlock Text="Pengaturan"
+                                       Foreground="#FFFFFF"
+                                       FontSize="20"
+                                       FontFamily="Montserrat"
+                                       FontWeight="Medium"
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+
+
+                </StackPanel>
+            <!--Main Menu-->
+            <Border CornerRadius="0,10,10,0"
+                    Background="#E2D9D9"
+                    Grid.Column="1">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <!--Control bar-->
+                        <RowDefinition Height="25"/>
+                        <!--Header / Caption-->
+                        <RowDefinition Height="35"/>
+                        <!--Content section / Child views-->
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel x:Name="pnlControlBar"
+                                Grid.Row="0"
+                                Orientation="Horizontal"
+                                FlowDirection="RightToLeft"
+                                Background="Transparent"
+                                Margin="0,0,5,0"
+                                MouseLeftButtonDown="pnlControlBar_MouseLeftButtonDown"
+                                MouseEnter="pnlControlBar_MouseEnter">
+                        
+                    </StackPanel>
+                </Grid>
+                
+            </Border>
+        </Grid>
+        
+        
+    </Border>
+
 </Window>
