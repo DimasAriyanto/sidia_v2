@@ -47,7 +47,20 @@ namespace SIDIA.Repositories
 
         public void Edit(UserModel userModel)
         {
-            throw new NotImplementedException();
+            this.openConnection();
+
+            MySqlCommand cmd;
+
+            cmd = new MySqlCommand("insert into users (username, password, nama, domisili, user_type) " +
+                "values (@username, @password, @nama, @domisili, @user_type)", this.getConnection());
+            cmd.Parameters.Add("@username", MySqlDbType.VarChar).Value = userModel.Username;
+            cmd.Parameters.Add("@password", MySqlDbType.VarChar).Value = userModel.Password;
+            cmd.Parameters.Add("@nama", MySqlDbType.VarChar).Value = userModel.Nama;
+            cmd.Parameters.Add("@domisili", MySqlDbType.VarChar).Value = userModel.Domisili;
+            cmd.Parameters.Add("@user_type", MySqlDbType.VarChar).Value = userModel.UserType;
+            cmd.Prepare();
+
+            cmd.ExecuteNonQuery();
         }
 
         public IEnumerable<UserModel> GetByAll()
