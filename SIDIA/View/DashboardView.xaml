@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:SIDIA.View"
         mc:Ignorable="d"
         WindowStyle="None"
+        MouseDown="Window_MouseDown"
         Title="DashboardView" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
@@ -18,5 +19,6 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">SIDIAv2</TextBlock>
+        <Frame Grid.Row="1" Grid.Column="1" Name="DashboardFrame" Source="HomePage.xaml"></Frame>
     </Grid>
 </Window>
