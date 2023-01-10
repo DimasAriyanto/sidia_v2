@@ -118,7 +118,7 @@
             </Border>
             <!--Main Menu-->
             <Border CornerRadius="0,10,10,0"
-                    Background="#E2D9D9"
+                    Background="White"
                     Grid.Column="1">
             
                 <Grid>
@@ -214,7 +214,22 @@
                     </Grid>
                 </StackPanel>
                 <Grid Grid.Row="1">
-                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <DataGrid Name="dgBarang" ColumnWidth="*" Grid.Row="1" Margin="32,16,32,40" AlternatingRowBackground = "LightBlue"  
+         AlternationCount = "2" AutoGenerateColumns = "False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header = "ID Barang"  />
+                            <DataGridTextColumn Header = "Nama"  />
+                            <DataGridCheckBoxColumn Header = "Harga" />
+                            <DataGridComboBoxColumn Header = "Stok"/>
+                            <DataGridCheckBoxColumn Header = "Expired" />
+                            <DataGridCheckBoxColumn Header = "Action" />
+                        </DataGrid.Columns>
+
+                    </DataGrid>
                 </Grid>
                 </Grid>
                 
