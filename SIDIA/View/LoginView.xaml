@@ -28,7 +28,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition Width="25"/>
                     <ColumnDefinition Width="25"/>
-                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="10"/>
                 </Grid.ColumnDefinitions>
 
                 <Button x:Name="btnMinimize"
@@ -129,7 +129,7 @@
                              Margin="0,5,0,0"
                              Padding="20,0,0,0">
                     <TextBox.Background>
-                        <ImageBrush 
+                        <ImageBrush ImageSource="/Images/user-icon.png"
                                         Stretch="None"
                                         AlignmentX="Left"/>
                     </TextBox.Background>
@@ -154,7 +154,7 @@
                              Margin="0,5,0,0"
                              Padding="20,0,0,0">
                     <PasswordBox.Background>
-                        <ImageBrush 
+                        <ImageBrush ImageSource="/Images/key-icon.png"
                                         Stretch="None"
                                         AlignmentX="Left"/>
                     </PasswordBox.Background>
@@ -162,7 +162,7 @@
 
                 <Button x:Name="btnLogin"
                         BorderThickness="0"
-                        Content="LOG IN"
+                        Content="LOGIN"
                         Foreground="#FFFFFF"
                         FontSize="12"
                         FontFamily="Montserrat"

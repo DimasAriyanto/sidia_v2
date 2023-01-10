@@ -8,7 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\key-icon.png" />
+    <None Remove="Images\logo.png" />
     <None Remove="Images\logo_mini.png" />
+    <None Remove="Images\user-icon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,7 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\key-icon.png" />
+    <Resource Include="Images\logo.png" />
     <Resource Include="Images\logo_mini.png" />
+    <Resource Include="Images\user-icon.png" />
   </ItemGroup>
 
 </Project>

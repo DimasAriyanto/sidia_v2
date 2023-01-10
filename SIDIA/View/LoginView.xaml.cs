@@ -42,7 +42,8 @@ namespace SIDIA.View
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-
+            DashboardView dashboardView = new DashboardView();
+            dashboardView.Show();
         }
     }
 }
