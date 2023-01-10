@@ -1,5 +1,4 @@
-﻿using SIDIA.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -15,11 +14,25 @@ namespace SIDIA.Repositories
     {
         public void Add(UserModel userModel)
         {
-            throw new NotImplementedException();
+            this.openConnection();
+
+            MySqlCommand cmd;
+
+            cmd = new MySqlCommand("insert into users (username, password, nama, domisili, user_type) " +
+                "values (@username, @password, @nama, @domisili, @user_type)", this.getConnection());
+            cmd.Parameters.Add("@username", MySqlDbType.VarChar).Value = userModel.Username;
+            cmd.Parameters.Add("@password", MySqlDbType.VarChar).Value = userModel.Password;
+            cmd.Parameters.Add("@nama", MySqlDbType.VarChar).Value = userModel.Nama;
+            cmd.Parameters.Add("@domisili", MySqlDbType.VarChar).Value = userModel.Domisili;
+            cmd.Parameters.Add("@user_type", MySqlDbType.VarChar).Value = userModel.UserType;
+            cmd.Prepare();
+
+            cmd.ExecuteNonQuery();
         }
 
         public bool AuthenticateUser(NetworkCredential credential)
         {
+            this.openConnection();
             DataTable tbl = new DataTable();
             MySqlDataAdapter adpt = new MySqlDataAdapter();
             MySqlCommand cmd = new MySqlCommand("select * from users where username = @username and password = @password", this.getConnection());
@@ -49,7 +62,30 @@ namespace SIDIA.Repositories
 
         public UserModel GetByUsername(string username)
         {
-            throw new NotImplementedException();
+            this.openConnection();
+            DataTable tbl = new DataTable();
+            MySqlDataAdapter adpt = new MySqlDataAdapter();
+            MySqlCommand cmd = new MySqlCommand("select * from users where username = @username", this.getConnection());
+            cmd.Parameters.Add("@username", MySqlDbType.VarChar).Value = username;
+
+            adpt.SelectCommand = cmd;
+            adpt.Fill(tbl);
+
+            if (tbl.Rows.Count == 0)
+            {
+                return (UserModel)null;
+            }
+
+            DataRow row = tbl.Rows[0];
+            UserModel userModel = new UserModel();
+
+            userModel.Id = row["id"].ToString();
+            userModel.Username = row["username"].ToString();
+            userModel.Password = row["password"].ToString();
+            userModel.Domisili = row["domisili"].ToString();
+            userModel.UserType = row["user_type"].ToString();
+
+            return userModel;
         }
 
         public void Remove(int id)
