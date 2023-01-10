@@ -6,7 +6,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using SIDIA.Models;
 using SIDIA.Repositories;
-using SIDIA.ViewModels;
 
 namespace SIDIA.ViewModels
 {

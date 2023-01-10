@@ -4,19 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SIDIA.View"
+        xmlns:viewModel="clr-namespace:SIDIA.ViewModels"
         mc:Ignorable="d"
+        Title="MainWindowView" Height="700" Width="1300"
+        WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        Title="DashboardView" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="120" />
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">SIDIAv2</TextBlock>
-    </Grid>
+        Background="Transparent"
+        AllowsTransparency="True">
+    
 </Window>
