@@ -16,7 +16,7 @@ namespace SIDIA.Repositories
         
         public void openConnection()
         {
-            if (_connection.State == System.Data.ConnectionState.Open)
+            if (_connection.State != System.Data.ConnectionState.Open)
             {
                 _connection.Open();
             }
@@ -24,7 +24,7 @@ namespace SIDIA.Repositories
 
         public void closeConnection()
         {
-            if ( _connection.State == System.Data.ConnectionState.Closed)
+            if ( _connection.State != System.Data.ConnectionState.Closed)
             {
                 _connection.Close();
             }

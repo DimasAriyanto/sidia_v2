@@ -8,30 +8,27 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\Admin.png" />
-    <None Remove="Images\barang.png" />
     <None Remove="Images\key-icon.png" />
     <None Remove="Images\logo.png" />
     <None Remove="Images\logo_mini.png" />
-    <None Remove="Images\settings.png" />
     <None Remove="Images\user-icon.png" />
-    <None Remove="Images\Worker.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FontAwesome.Sharp" Version="6.2.1" />
     <PackageReference Include="MySql.Data" Version="8.0.31" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\Admin.png" />
-    <Resource Include="Images\barang.png" />
     <Resource Include="Images\key-icon.png" />
     <Resource Include="Images\logo.png" />
     <Resource Include="Images\logo_mini.png" />
-    <Resource Include="Images\settings.png" />
     <Resource Include="Images\user-icon.png" />
-    <Resource Include="Images\Worker.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Styles\Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
   </ItemGroup>
 
 </Project>

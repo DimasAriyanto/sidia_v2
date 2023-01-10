@@ -41,7 +41,7 @@ namespace SIDIA.ViewModels
             if (user != null)
             {
                 CurrentUserAccount.Username = user.Username;
-                CurrentUserAccount.DisplayName = $"Welcome {user.Name} {user.LastName} ;)";
+                CurrentUserAccount.DisplayName = $"Welcome {user.Nama};)";
                 CurrentUserAccount.ProfilePicture = null;
             }
             else
