@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SIDIA.View"
-        xmlns:viewModel="clr-namespace:SIDIA.ViewModel" xmlns:CustomControl="clr-namespace:SIDIA.CustomControl"
+        xmlns:viewModel="clr-namespace:SIDIA.ViewModels" 
+        xmlns:customControl="clr-namespace:SIDIA.CustomControls"
         mc:Ignorable="d"
         Title="LoginView" Height="600" Width="800"
         WindowStyle="None"
@@ -156,11 +157,11 @@
                            FontWeight="Medium"
                            FontFamily="Montserrat"                             
                            Margin="0,15,0,0"/>
-
-                <CustomControl:BindablePasswordBox Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                
+                <customControl:BindablePasswordBox Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                    Height="28"
                                                    Margin="0,5,0,0">
-                </CustomControl:BindablePasswordBox>
+                </customControl:BindablePasswordBox>
                 
                 <TextBlock Text="{Binding ErrorMessage}"
                            Foreground="#D7596D"

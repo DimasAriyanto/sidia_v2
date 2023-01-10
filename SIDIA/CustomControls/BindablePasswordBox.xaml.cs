@@ -13,12 +13,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace SIDIA.CustomControl
+namespace SIDIA.CustomControls
 {
     /// <summary>
     /// Interaction logic for BindablePasswordBox.xaml
     /// </summary>
-    public partial class BindablePasswordBox : Window
+    public partial class BindablePasswordBox
     {
         public static readonly DependencyProperty PasswordProperty =
             DependencyProperty.Register("Password", typeof(SecureString), typeof(BindablePasswordBox));

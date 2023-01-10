@@ -11,7 +11,7 @@ using System.Windows.Input;
 using SIDIA.Models;
 using SIDIA.Repositories;
 
-namespace SIDIA.ViewModel
+namespace SIDIA.ViewModels
 {
     public class LoginViewModel: ViewModelBase
     {

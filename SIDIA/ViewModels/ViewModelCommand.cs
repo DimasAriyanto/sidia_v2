@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SIDIA.ViewModel
+namespace SIDIA.ViewModels
 {
     public class ViewModelCommand : ICommand
     {
