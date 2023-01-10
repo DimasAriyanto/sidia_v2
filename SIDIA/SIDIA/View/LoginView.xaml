@@ -99,11 +99,11 @@
                         Orientation="Vertical"
                         Margin="0, 40, 0, 0">
                 
-                <Image Source="/Images/logo_mini.png"
-                       Width="98.85" Height="100"/>
+                <Image Source="pack://application:,,,/Images/logo_mini.png"
+                           Width="100" Height="100"/>
 
-                <TextBlock Text="Login as"
-                           FontSize="20"
+                <TextBlock Text="SIDIA"
+                           FontSize="25"
                            FontWeight="Medium"
                            FontFamily="Montserrat"
                            HorizontalAlignment="Center"
