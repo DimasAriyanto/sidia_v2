@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using SIDIA.Models;
 
 namespace SIDIA.Repositories
@@ -20,18 +20,16 @@ namespace SIDIA.Repositories
 
         public bool AuthenticateUser(NetworkCredential credential)
         {
-            bool validUser;
-            using (var connection = GetConnection())
-            using (var command = new SqlCommand())
-            {
-                connection.Open();
-                command.Connection = connection;
-                command.CommandText = "select *from [User] where username=@username and [password]=@password";
-                command.Parameters.Add("@username", SqlDbType.NVarChar).Value = credential.UserName;
-                command.Parameters.Add("@password", SqlDbType.NVarChar).Value = credential.Password;
-                validUser = command.ExecuteScalar() == null ? false : true;
-            }
-            return validUser;
+            DataTable tbl = new DataTable();
+            MySqlDataAdapter adpt = new MySqlDataAdapter();
+            MySqlCommand cmd = new MySqlCommand("select * from users where username = @username and password = @password", this.getConnection());
+            cmd.Parameters.Add("@username", MySqlDbType.VarChar).Value = credential.UserName;
+            cmd.Parameters.Add("@password", MySqlDbType.VarChar).Value = credential.Password;
+
+            adpt.SelectCommand = cmd;
+            adpt.Fill(tbl);
+
+            return tbl.Rows.Count > 0;
         }
 
         public void Edit(UserModel userModel)
