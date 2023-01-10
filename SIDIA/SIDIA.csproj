@@ -8,10 +8,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Admin.png" />
+    <None Remove="Images\barang.png" />
     <None Remove="Images\key-icon.png" />
     <None Remove="Images\logo.png" />
     <None Remove="Images\logo_mini.png" />
+    <None Remove="Images\settings.png" />
     <None Remove="Images\user-icon.png" />
+    <None Remove="Images\Worker.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Worker.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Admin.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,9 +31,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\barang.png" />
     <Resource Include="Images\key-icon.png" />
     <Resource Include="Images\logo.png" />
     <Resource Include="Images\logo_mini.png" />
+    <Resource Include="Images\settings.png" />
     <Resource Include="Images\user-icon.png" />
   </ItemGroup>
 

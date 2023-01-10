@@ -119,15 +119,15 @@
 
                 <TextBlock Text="SIDIA"
                            FontSize="25"
-                           FontWeight="Medium"
+                           FontWeight="Bold"
                            FontFamily="Montserrat"
                            HorizontalAlignment="Center"
-                           Margin="0, 11, 0, 0"/>
+                           Margin="0, 16, 0, 0"/>
 
                 <TextBlock Text="Username"
-                           Foreground="#9B8585"
-                           FontSize="16"
-                           FontWeight="Medium"
+                           Foreground="Black"
+                           FontSize="14"
+                           FontWeight="Light"
                            FontFamily="Montserrat"
                            Margin="0, 40, 0, 0"/>
 
@@ -152,9 +152,9 @@
                 </TextBox>
 
                 <TextBlock Text="Password"
-                           Foreground="DarkGray"
-                           FontSize="12"
-                           FontWeight="Medium"
+                           Foreground="Black"
+                           FontSize="14"
+                           FontWeight="Light"
                            FontFamily="Montserrat"                             
                            Margin="0,15,0,0"/>
                 
