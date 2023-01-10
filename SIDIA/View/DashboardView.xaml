@@ -4,21 +4,35 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SIDIA.View"
+        xmlns: viewmodel="clr-namespace:SIDIA.View.DashboardView"
+        Title="MainwindowsView" Height="700" Width="1300    " 
+        WindowStartupLocation="CenterScreen" 
         mc:Ignorable="d"
-        WindowStyle="None"
-        MouseDown="Window_MouseDown"
-        Title="DashboardView" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="120" />
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+        WindowStyle="None" 
+        Bacground="Transparent"
+        AllowTransparency="True">
+    
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>"
 
-        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">SIDIAv2</TextBlock>
-        <Frame Grid.Row="1" Grid.Column="1" Name="DashboardFrame" Source="HomePage.xaml"></Frame>
-    </Grid>
+    <Border CornerRadius="10"
+            BorderThickness="1"
+
+        <Border.BorderBrush>
+            <LiniergGradientBrush StarPoint="0,0" EndPoint="1,1">
+                <GradienStop  Color="{StaticResource winBorderColor1} Offset="0"/>
+                <GradienStop  Color="{StaticResource winBorderColor1} Offset="0.5"/>
+                <GradienStop  Color="{StaticResource winBorderColor1} Offset="1"/>
+            </LiniergGradientBrush>
+        </Border.BorderBrush>
+                    
+        <Grid>  
+            <Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions Width="250">
+                </Grid.ColumnDefinitions Width="*">
+            </Grid.ColumnDefinitions>
+        </Grid>
+
+     </Border>
 </Window>
