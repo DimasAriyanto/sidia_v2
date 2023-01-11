@@ -136,7 +136,7 @@
                          FontSize="18"
                          FontWeight="Regular"
                          FontFamily="PT Sans"
-                         Foreground="White"
+                         Foreground="#FFFFFF"
                              CaretBrush="LightGray"
                              BorderBrush="DarkGray"
                              BorderThickness="0,0,0,2"

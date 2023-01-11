@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SIDIA.View
+namespace SIDIA.Views
 {
     /// <summary>
-    /// Interaction logic for HomePage.xaml
+    /// Interaction logic for RegisterView.xaml
     /// </summary>
-    public partial class HomePage : Page
+    public partial class RegisterView : Window
     {
-        public HomePage()
+        public RegisterView()
         {
             InitializeComponent();
         }

@@ -113,11 +113,10 @@
                         </StackPanel>
                     </RadioButton>
 
-
                 </StackPanel>
             </Border>
-            <!--Main Menu-->
-            <Border CornerRadius="0,10,10,0"
+        <!--Main Section-->
+        <Border CornerRadius="0,10,10,0"
                     Background="White"
                     Grid.Column="1">
             
@@ -125,19 +124,19 @@
                     <Grid.RowDefinitions>
                         <!--Control bar-->
                         <RowDefinition Height="80"/>
-                    <!--Content section / Child views-->
+                        <!--Content section / Child views-->
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <StackPanel x:Name="pnlControlBar"
+                <StackPanel x:Name="pnlControlBar"
                                 Grid.Row="0"
                                 Orientation="Horizontal"
                                 FlowDirection="RightToLeft"
                                 Background="#2E2E2F"
                                 Margin="0,0,0,0"
-                                
                                 MouseLeftButtonDown="pnlControlBar_MouseLeftButtonDown"
                                 MouseEnter="pnlControlBar_MouseEnter">
+
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="25"/>

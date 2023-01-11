@@ -26,7 +26,7 @@ namespace SIDIA.Repositories
         {
             if ( _connection.State != System.Data.ConnectionState.Closed)
             {
-                _connection.Close();
+                _connection.Close(); 
             }
         }
 
