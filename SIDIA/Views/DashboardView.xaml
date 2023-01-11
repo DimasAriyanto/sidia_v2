@@ -217,9 +217,13 @@
                         <RowDefinition Height="80"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <DataGrid Name="dgBarang" ColumnWidth="*" Grid.Row="1" Margin="32,16,32,40" AlternatingRowBackground = "LightBlue"  
+                    <StackPanel Orientation="Horizontal">
+                        <Button Margin="32, 24, 16, 24" Background="#016CA8" Foreground="White" Padding="20, 0">Add</Button>
+                        <TextBox Margin="0, 24, 32, 24" Padding="8, 0, 84, 0" Text="Search..." TextAlignment="Left" VerticalContentAlignment="Center"/>
+                    </StackPanel>
+                    <DataGrid Name="dgBarang" ColumnWidth="*" Grid.Row="1" Margin="32,0,32,40" AlternatingRowBackground = "LightBlue"  
          AlternationCount = "2" AutoGenerateColumns = "False">
-                        <DataGrid.Columns>
+                        <DataGrid.Columns>     
                             <DataGridTextColumn Header = "ID Barang"  />
                             <DataGridTextColumn Header = "Nama"  />
                             <DataGridCheckBoxColumn Header = "Harga" />
