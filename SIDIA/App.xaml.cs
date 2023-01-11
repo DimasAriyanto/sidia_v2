@@ -1,4 +1,4 @@
-﻿using SIDIA.View;
+﻿using SIDIA.Views;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

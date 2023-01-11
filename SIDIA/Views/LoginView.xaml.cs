@@ -8,7 +8,7 @@ using System.Net;
 using System.Windows.Input;
 using SIDIA.Repositories;
 
-namespace SIDIA.View
+namespace SIDIA.Views
 {
     /// <summary>
     /// Interaction logic for LoginView.xaml

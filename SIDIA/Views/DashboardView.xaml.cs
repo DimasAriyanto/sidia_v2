@@ -13,8 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
+using Wpf.Ui.Common;
+using Wpf.Ui.Controls.Interfaces;
+using Wpf.Ui.Mvvm.Contracts;
 
-namespace SIDIA.View
+namespace SIDIA.Views
 {
     /// <summary>
     /// Interaction logic for DashboardView.xaml
@@ -25,7 +28,16 @@ namespace SIDIA.View
         {
             InitializeComponent();
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+
+            Navigate(typeof(HomePageView));
+            
         }
+        public Frame GetFrame()
+            => RootFrame;
+
+        public bool Navigate(Type pageType)
+            => RootNavigation.Navigate(pageType);
+
 
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessage(IntPtr hWnd, int wMsg, int wParam, int lParam);
@@ -40,6 +52,26 @@ namespace SIDIA.View
         {
             WindowInteropHelper helper = new WindowInteropHelper(this);
             SendMessage(helper.Handle, 161, 2, 0);
+        }
+        private void Logout_OnClick(Object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        private void RootNavigation_OnNavigated(INavigation sender, RoutedNavigationEventArgs e)
+        {
+            RootFrame.Margin = new Thickness(
+                left: 0,
+                top: sender?.Current?.PageTag == "dashboard" ? -69 : 0,
+                right: 0,
+                bottom: 0);
+        }
+
+        private void TrayMenuItem_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (sender is not MenuItem menuItem)
+                return;
+
+            System.Diagnostics.Debug.WriteLine($"DEBUG | Tray clicked: {menuItem.Tag}", "SIDIAv2");
         }
 
         private void pnlControlBar_MouseEnter(object sender, MouseEventArgs e)
