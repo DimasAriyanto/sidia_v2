@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using SIDIA.Models;
 using SIDIA.Repositories;
+using SIDIA.Views;
 
 namespace SIDIA.ViewModels
 {
@@ -95,7 +96,9 @@ namespace SIDIA.ViewModels
             {
                 Thread.CurrentPrincipal = new GenericPrincipal(
                     new GenericIdentity(Username), null);
-                IsViewVisible = false;
+                var dashboardView = new DashboardView();
+                dashboardView.Show();
+                this.CloseView();
             }
             else
             {

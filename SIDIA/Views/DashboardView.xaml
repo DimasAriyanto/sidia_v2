@@ -5,12 +5,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SIDIA.Views"
+        xmlns:viewModel="clr-namespace:SIDIA.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="760" Width="1280" 
         ResizeMode="NoResize"
         WindowStyle="None"
         Background="{ui:ThemeResource ApplicationBackgroundBrush}"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -85,7 +87,7 @@
                         VerticalAlignment="Top"
                         FontSize="24"
                         Navigation="{Binding ElementName=RootNavigation}" />
-                    <TextBlock Foreground="White" Text="@ Copyright 2022 | Dibuat oleh Kelompok 2 Pemrograman Lanjut" FontWeight="ExtraLight" Grid.Row="2" VerticalAlignment="Center" Margin="20"/>
+                    <TextBlock Foreground="White" Text="@ Copyright 2023 | Dibuat oleh Kelompok 2 Pemrograman Lanjut" FontWeight="ExtraLight" Grid.Row="2" VerticalAlignment="Center" Margin="20"/>
 
                     <ui:Snackbar
                         x:Name="RootSnackbar"
@@ -102,7 +104,7 @@
         </Grid>
 
         <ui:TitleBar
-            Title="Sistem Informasi Persediaan Barang"
+            Title="Sistem Informasi Persediaan Stok Barang"
             Grid.Row="0"
             ForceShutdown="False"
             Icon="pack://application:,,,/Images/logo.png"

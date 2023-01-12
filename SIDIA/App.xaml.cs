@@ -17,14 +17,14 @@ namespace SIDIA
         protected void ApplicationStart(object sender, StartupEventArgs e)
         {
             var loginView = new LoginView();
+            var dashboardView = new DashboardView();
             loginView.Show();
             loginView.IsVisibleChanged += (s, ev) =>
             {
                 if (loginView.IsVisible == false && loginView.IsLoaded)
                 {
-                    var dashboard = new DashboardView();
-                    dashboard.Show();
-                    loginView.Close();
+                    dashboardView.Show();
+                    loginView.Hide();
                 }
             };
         }

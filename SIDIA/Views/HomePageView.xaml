@@ -51,7 +51,7 @@
                         HorizontalAlignment="Center"
                             Foreground="#B7FFFFFF"
                         FontWeight="Light"
-                            Text="Gunakanlah Aplikasi dengan Bijak." />
+                            Text="Aplikasi Sistem Informasi Persediaan Stok Barang." />
                 </StackPanel>
             </Grid>
         </Border>

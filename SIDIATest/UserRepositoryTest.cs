@@ -41,7 +41,7 @@ namespace SIDIATest
                 Domisili = "Yogyakarta",
                 UserType = "admin"
             };
-            userRepository.Add(userModel);
+            int add = userRepository.Add(userModel);
             bool isValid = userRepository.AuthenticateUser(new NetworkCredential("syahid123", "syahid123"));
             Assert.IsTrue(isValid);
             trans.Rollback();

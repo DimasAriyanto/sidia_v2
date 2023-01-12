@@ -7,12 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using SIDIA.Models;
+using Dapper;
 
 namespace SIDIA.Repositories
 {
     public class UserRepository : RepositoryBase, IUserRepository
     {
-        public void Add(UserModel userModel)
+        public int Add(UserModel userModel)
         {
             this.openConnection();
 
@@ -27,7 +28,7 @@ namespace SIDIA.Repositories
             cmd.Parameters.Add("@user_type", MySqlDbType.VarChar).Value = userModel.UserType;
             cmd.Prepare();
 
-            cmd.ExecuteNonQuery();
+            return cmd.ExecuteNonQuery();
         }
 
         public bool AuthenticateUser(NetworkCredential credential)
@@ -99,6 +100,20 @@ namespace SIDIA.Repositories
             userModel.UserType = row["user_type"].ToString();
 
             return userModel;
+        }
+        public List<UserModel> GetAdmins()
+        {
+            this.openConnection();
+
+            string sql = "select id, username, password, nama, domisili, user_type UserType from users where user_type ='admin'";
+            return this.getConnection().Query<UserModel>(sql).ToList();
+        }
+        public List<UserModel> GetPegawais()
+        {
+            this.openConnection();
+
+            string sql = "select id, username, password, nama, domisili, user_type UserType from users where user_type ='pegawai'";
+            return this.getConnection().Query<UserModel>(sql).ToList();
         }
 
         public void Remove(int id)

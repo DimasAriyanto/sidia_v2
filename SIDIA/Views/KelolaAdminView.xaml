@@ -4,6 +4,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:local="clr-namespace:SIDIA.Views"
+      xmlns:viewModel="clr-namespace:SIDIA.ViewModels"
       xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
       mc:Ignorable="d" 
       d:DataContext="{d:DesignInstance local:KelolaAdminView,
@@ -11,6 +12,9 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="KelolaAdmin">
 
+    <Page.DataContext>
+        <viewModel:KelolaAdminViewModel />
+    </Page.DataContext>
 
     <VirtualizingStackPanel
         x:Name="RootPanel"
@@ -29,18 +33,31 @@
             Text="Koleksi data admin."
             Margin="0, 4"
             TextWrapping="WrapWithOverflow" />
-
         <ui:DataGrid
             Margin="0,8,0,0"
-            AutoGenerateColumns="False"
             FontWeight="Light"
-            ItemsSource="{Binding ViewModel.DataPegawai}">
+            AutoGenerateColumns="False"
+            IsReadOnly="True"
+            ColumnWidth="*"
+            HorizontalScrollBarVisibility="Auto"
+            ItemsSource="{Binding SemuaAdmin}">
             <ui:DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Nama}" Header="Nama Admin" />
-                <DataGridTextColumn Binding="{Binding Username}" Header="Username" />
-                <DataGridTextColumn Binding="{Binding JenisKelamin}" Header="Jenis Kelamin" />
-                <DataGridTextColumn Binding="{Binding Alamat}" Header="Alamat" />
-                <DataGridTextColumn Binding="{Binding Umur}" Header="Umur" />
+                <DataGridTextColumn Header = "ID Admin"  Binding="{Binding Id}"/>
+                <DataGridTextColumn Header = "Username" Binding="{Binding Username}"/>
+                <DataGridTextColumn Header = "Nama Admin" Binding="{Binding Nama}"/>
+                <DataGridTextColumn Header = "Domisili" Binding="{Binding Domisili}"/>
+                <DataGridTextColumn Header = "Tipe" Binding="{Binding UserType}"/>
+                <DataGridTemplateColumn Header="Action">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="Detail" Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType={x:Type ui:DataGrid}}}" CommandParameter="{Binding}" Margin="5" />
+                                <Button Content="Edit" Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType={x:Type ui:DataGrid}}}" CommandParameter="{Binding}" Margin="5" />
+                                <Button Content="Delete" Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource AncestorType={x:Type ui:DataGrid}}}" CommandParameter="{Binding}" Margin="5" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </ui:DataGrid.Columns>
         </ui:DataGrid>
     </VirtualizingStackPanel>
