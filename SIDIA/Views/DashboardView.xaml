@@ -45,6 +45,7 @@
                         Padding="2"
                         Name="Kelola_barang"
                         Content="Kelola Barang" 
+                        PageType="{x:Type local:KelolaBarangView}"
                         Icon="AppFolder24" />
                     <ui:NavigationItem 
                         Padding="2"
@@ -83,7 +84,7 @@
                         VerticalAlignment="Top"
                         FontSize="24"
                         Navigation="{Binding ElementName=RootNavigation}" />
-                    <TextBlock Foreground="White" Text="@ Copyright 2022 | Dibuat oleh Tim KAPAK ULO" FontWeight="ExtraLight" Grid.Row="2" VerticalAlignment="Center" Margin="20"/>
+                    <TextBlock Foreground="White" Text="@ Copyright 2022 | Dibuat oleh Kelompok 2 Pemrograman Lanjut" FontWeight="ExtraLight" Grid.Row="2" VerticalAlignment="Center" Margin="20"/>
 
                     <ui:Snackbar
                         x:Name="RootSnackbar"

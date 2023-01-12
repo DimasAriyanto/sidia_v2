@@ -11,7 +11,7 @@ namespace SIDIA.ViewModels
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public void OnPropertyChanged(string propertyName)
+        public void OnPropertyChanged(string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
