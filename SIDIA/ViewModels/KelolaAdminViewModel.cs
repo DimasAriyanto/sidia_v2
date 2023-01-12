@@ -41,9 +41,11 @@ namespace SIDIA.ViewModels
         private void DeleteItem(object parameter)
         {
             var item = parameter as UserModel;
+            List<UserModel> tmp = SemuaAdmin;
             if (item != null)
             {
-                SemuaAdmin.Remove(item);
+                tmp.Remove(item);
+                SemuaAdmin = tmp;
             }
         }
     }
