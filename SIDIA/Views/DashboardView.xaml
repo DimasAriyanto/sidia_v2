@@ -51,6 +51,7 @@
                         Padding="2"
                         Name="Kelola_admin"
                         Content="Kelola Admin"
+                        PageType="{x:Type local:KelolaAdminView}"
                         Icon="People24" />
                     <ui:NavigationItem 
                         Padding="2"

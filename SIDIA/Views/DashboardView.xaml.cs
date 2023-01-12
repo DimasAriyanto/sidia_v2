@@ -55,6 +55,8 @@ namespace SIDIA.Views
         }
         private void Logout_OnClick(Object sender, RoutedEventArgs e)
         {
+            var loginView = new LoginView();
+            loginView.Show();
             this.Close();
         }
         private void RootNavigation_OnNavigated(INavigation sender, RoutedNavigationEventArgs e)

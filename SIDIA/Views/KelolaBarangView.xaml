@@ -29,7 +29,7 @@
             TextWrapping="WrapWithOverflow" />
         <TextBlock
             Foreground="{DynamicResource TextFillColorSecondaryBrush}"
-            Text="Koleksi data barang, create, read, update, delete."
+            Text="Koleksi data barang."
             Margin="0, 4"
             TextWrapping="WrapWithOverflow" />
         <ui:DataGrid
