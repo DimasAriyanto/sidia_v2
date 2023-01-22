@@ -146,7 +146,7 @@ namespace SIDIA.ViewModels
         public RegisterViewModel()
         {
             userRepository = new UserRepository();
-            RegisterCommand = new ViewModelCommand(ExecuteRegisterCommand, CanExecuteRegisterCommand);
+            RegisterCommand = new ViewModelCommand(ExecuteRegisterCommand);
         }
         private bool CanExecuteRegisterCommand(object obj)
         {
@@ -167,6 +167,19 @@ namespace SIDIA.ViewModels
             {
                 UserType = "admin";
             } 
+
+            if (string.IsNullOrWhiteSpace(Username) || Username.Length < 3 ||
+                Password == null || Password.Length < 3)
+            {
+                ErrorMessage = "* Username / passwod must be more than 3 characthers";
+                return;
+            }
+
+            if (!IsPegawaiSelected && !IsAdminSelected)
+            {
+                ErrorMessage = "* User type must be selected";
+                return;
+            }
 
             UserModel existingUser = userRepository.GetByUsername(Username);
             if (existingUser != null)

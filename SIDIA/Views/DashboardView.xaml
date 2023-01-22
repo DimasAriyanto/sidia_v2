@@ -34,7 +34,7 @@
                 Precache="False"
                 TransitionDuration="200"
                 TransitionType="FadeInWithSlide"
-                Frame="{Binding ElementName=RootFrame}"
+                Frame="{Binding ElementName=RootFrame, Mode=OneWay}"
                 SelectedPageIndex="0">
                 <ui:NavigationFluent.Items>
                     <ui:NavigationItem

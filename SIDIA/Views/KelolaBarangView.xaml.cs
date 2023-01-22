@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Wpf.Ui.Mvvm.Services;
+using SIDIA.ViewModels;
 
 namespace SIDIA.Views
 {
@@ -23,6 +25,11 @@ namespace SIDIA.Views
         public KelolaBarangView()
         {
             InitializeComponent();
+
+            Window winwow = Window.GetWindow(this);
+            var frame = (Frame)this.FindName("RootFrame");
+            var kelolaBarangViewModel = new KelolaBarangViewModel(frame);
+            DataContext = kelolaBarangViewModel;
         }
     }
 }
