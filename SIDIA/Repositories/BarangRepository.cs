@@ -21,7 +21,46 @@ namespace SIDIA.Repositories
 
         public bool DeleteBarang(int IdBarang)
         {
-            return true;
+            this.openConnection();
+
+            string sql = "delete from barang where id_barang = @idBarang";
+            int rowAffected = this.getConnection().ExecuteScalar<int>(sql, new { idBarang = IdBarang });
+            return rowAffected > 0;
+        }
+
+        public bool UpdateBarang(int IdBarang, BarangModel barang)
+        {
+            this.openConnection();
+
+            string sql = "update barang set nama_barang = @namaBarang, harga = @harga, satuan = @satuan, stok = @stok, tanggal_keluar = @tanggalKeluar, tanggal_masuk = @tanggalMasuk where id_barang = @idBarang";
+            int rowAffected = this.getConnection().ExecuteScalar<int>(sql, new
+            {
+                namaBarang = barang.NamaBarang,
+                harga = barang.Harga,
+                satuan = barang.Satuan,
+                stok = barang.Stok,
+                tanggalKeluar = barang.TanggalKeluar,
+                tanggalMasuk = barang.TanggalMasuk,
+                idBarang = barang.IdBarang
+            });
+            return rowAffected > 0;
+        }
+
+        public void InsertBarang(BarangModel barang)
+        {
+            this.openConnection();
+
+            string sql = "insert into barang (nama_barang, harga, satuan, stok, tanggal_keluar, tanggal_masuk) values (@namaBarang, @harga, @satuan, @stok, @tanggalKeluar, @tanggalMasuk)";
+            this.getConnection().Execute(sql, new
+            {
+                namaBarang = barang.NamaBarang,
+                harga = barang.Harga,
+                satuan = barang.Satuan,
+                stok = barang.Stok,
+                tanggalKeluar = barang.TanggalKeluar,
+                tanggalMasuk = barang.TanggalMasuk
+            });
+
         }
     }
 }

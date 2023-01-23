@@ -19,6 +19,7 @@ namespace SIDIA.ViewModels
         public ICommand EditCommand { get; set; }
         public ICommand DeleteCommand { get; set; }
         public ICommand DetailCommand { get; set; }
+        public ICommand RedirectToAddCommand { get; set; }
         private INavigationService _navigationService;
         private List<BarangModel> _semuaBarang;
         private BarangRepository _barangRepository;
@@ -36,6 +37,11 @@ namespace SIDIA.ViewModels
             DetailCommand = new DelegateCommand<BarangModel>(DetailItem);
             EditCommand = new DelegateCommand<BarangModel>(EditItem);
             DeleteCommand = new DelegateCommand<BarangModel>(DeleteItem);
+            RedirectToAddCommand = new DelegateCommand(RedirectToAdd);
+        }
+        private void RedirectToAdd()
+        {
+            _navigationService.NavigateTo(new AddBarangView());
         }
         private void DetailItem(object parameter)
         {

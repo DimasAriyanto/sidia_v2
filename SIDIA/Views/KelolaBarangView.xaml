@@ -29,6 +29,7 @@
             Text="Koleksi data barang."
             Margin="0, 4"
             TextWrapping="WrapWithOverflow" />
+        <ui:Button Appearance="Info" Icon="Add24" Content="Tambah" Margin="0, 5" Command="{Binding RedirectToAddCommand}"/>
         <ui:DataGrid
             Margin="0,8,0,0"
             FontWeight="Light"
