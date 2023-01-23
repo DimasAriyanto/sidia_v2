@@ -33,7 +33,7 @@ namespace SIDIA.Repositories
             this.openConnection();
 
             string sql = "update barang set nama_barang = @namaBarang, harga = @harga, satuan = @satuan, stok = @stok, tanggal_keluar = @tanggalKeluar, tanggal_masuk = @tanggalMasuk where id_barang = @idBarang";
-            int rowAffected = this.getConnection().ExecuteScalar<int>(sql, new
+            int rowAffected = this.getConnection().Execute(sql, new
             {
                 namaBarang = barang.NamaBarang,
                 harga = barang.Harga,

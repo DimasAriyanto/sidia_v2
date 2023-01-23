@@ -73,16 +73,16 @@
                 Margin="0,8,0,0"
                 Foreground="{DynamicResource TextFillColorSecondaryBrush}"
                 Text="Tanggal Masuk" />
-            <DatePicker Text="{Binding Barang.TanggalMasuk}"
+            <DatePicker Text="{Binding TanggalMasuk, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     Margin="0,8,4,0"/>
 
             <TextBlock
                 Margin="0,8,0,0"
                 Foreground="{DynamicResource TextFillColorSecondaryBrush}"
                 Text="Tanggal Keluar" />
-            <DatePicker Text="{Binding Barang.TanggalKeluar}"
+            <DatePicker Text="{Binding TanggalKeluar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     Margin="0,8,4,0"/>
-            <ui:Button Appearance="Info" Content="Simpan" Margin="0,14"/>
+            <ui:Button Appearance="Info" Content="Simpan" Margin="0,14" Command="{Binding EditBarangCommand}"/>
         </VirtualizingStackPanel>
     </Grid>
 </Page>
