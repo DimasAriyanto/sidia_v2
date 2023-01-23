@@ -127,7 +127,7 @@
                 <TextBlock Text="Username"
                            Foreground="Black"
                            FontSize="14"
-                           FontWeight="Light"
+                           FontWeight="SemiBold"
                            FontFamily="Montserrat"
                            Margin="0, 20, 0, 0"/>
 
@@ -136,7 +136,7 @@
                          FontSize="18"
                          FontWeight="Regular"
                          FontFamily="PT Sans"
-                         Foreground="#FFFFFF"
+                         Foreground="#000"
                              CaretBrush="LightGray"
                              BorderBrush="DarkGray"
                              BorderThickness="0,0,0,2"
@@ -154,7 +154,7 @@
                 <TextBlock Text="Password"
                            Foreground="Black"
                            FontSize="14"
-                           FontWeight="Light"
+                           FontWeight="SemiBold"
                            FontFamily="Montserrat"                             
                            Margin="0,8,0,0"/>
 
@@ -166,7 +166,7 @@
                 <TextBlock Text="Nama"
                            Foreground="Black"
                            FontSize="14"
-                           FontWeight="Light"
+                           FontWeight="SemiBold"
                            FontFamily="Montserrat"                             
                            Margin="0,8,0,0"/>
 
@@ -175,7 +175,7 @@
                          FontSize="18"
                          FontWeight="Regular"
                          FontFamily="PT Sans"
-                         Foreground="#FFFFFF"
+                         Foreground="#000"
                              CaretBrush="LightGray"
                              BorderBrush="DarkGray"
                              BorderThickness="0,0,0,2"
@@ -193,7 +193,7 @@
                 <TextBlock Text="Domisili"
                            Foreground="Black"
                            FontSize="14"
-                           FontWeight="Light"
+                           FontWeight="SemiBold"
                            FontFamily="Montserrat"                             
                            Margin="0,8,0,0"/>
 
@@ -202,7 +202,7 @@
                          FontSize="18"
                          FontWeight="Regular"
                          FontFamily="PT Sans"
-                         Foreground="#FFFFFF"
+                         Foreground="#000"
                              CaretBrush="LightGray"
                              BorderBrush="DarkGray"
                              BorderThickness="0,0,0,2"
@@ -219,13 +219,13 @@
                 <TextBlock Text="UserType"
                            Foreground="Black"
                            FontSize="14"
-                           FontWeight="Light"
+                           FontWeight="SemiBold"
                            FontFamily="Montserrat"                             
                            Margin="0,8,0,0"/>
 
                 <StackPanel Orientation="Horizontal">
-                    <RadioButton GroupName="userType"  Content="Pegawai" IsChecked="{Binding IsPegawaiSelected}" />
-                    <RadioButton GroupName="userType" Content="Admin" IsChecked="{Binding IsAdminSelected}"/>
+                    <RadioButton GroupName="userType"  Content="Pegawai" IsChecked="{Binding IsPegawaiSelected}" Foreground="#000" />
+                    <RadioButton GroupName="userType" Content="Admin" IsChecked="{Binding IsAdminSelected}" Foreground="#000"/>
                 </StackPanel>
 
                 <TextBlock Text="{Binding ErrorMessage}"

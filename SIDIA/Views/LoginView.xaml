@@ -127,7 +127,7 @@
                 <TextBlock Text="Username"
                            Foreground="Black"
                            FontSize="14"
-                           FontWeight="Light"
+                           FontWeight="SemiBold"
                            FontFamily="Montserrat"
                            Margin="0, 40, 0, 0"/>
 
@@ -136,7 +136,7 @@
                          FontSize="18"
                          FontWeight="Regular"
                          FontFamily="PT Sans"
-                         Foreground="#FFFFFF"
+                         Foreground="#000"
                              CaretBrush="LightGray"
                              BorderBrush="DarkGray"
                              BorderThickness="0,0,0,2"
@@ -154,7 +154,7 @@
                 <TextBlock Text="Password"
                            Foreground="Black"
                            FontSize="14"
-                           FontWeight="Light"
+                           FontWeight="SemiBold"
                            FontFamily="Montserrat"                             
                            Margin="0,15,0,0"/>
                 

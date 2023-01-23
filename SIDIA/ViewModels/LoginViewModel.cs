@@ -7,6 +7,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using SIDIA.Models;
 using SIDIA.Repositories;
@@ -97,8 +98,15 @@ namespace SIDIA.ViewModels
                 Thread.CurrentPrincipal = new GenericPrincipal(
                     new GenericIdentity(Username), null);
                 var dashboardView = new DashboardView();
-                dashboardView.Show();
+
+                MessageBoxResult result = MessageBox.Show("Login Berhasil");
+                if (result == MessageBoxResult.OK)
+                {
+                    dashboardView.Show();
+
                 this.CloseView();
+                }
+
             }
             else
             {

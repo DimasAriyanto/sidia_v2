@@ -12,6 +12,7 @@ using System.Runtime.InteropServices;
 using SIDIA.Models;
 using SIDIA.Repositories;
 using SIDIA.Views;
+using System.Windows;
 
 namespace SIDIA.ViewModels
 {
@@ -203,8 +204,15 @@ namespace SIDIA.ViewModels
                     new GenericIdentity(Username), null);
                 IsViewVisible = false;
                 var dashboardView = new DashboardView();
-                dashboardView.Show();
-                this.CloseView();
+                var loginView = new LoginView();
+
+                MessageBoxResult result = MessageBox.Show("Register Berhasil");
+                if (result == MessageBoxResult.OK)
+                {
+                    loginView.Show();
+
+                    this.CloseView();
+                }
             }
             else
             {
