@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Controls;
 using SIDIA.Models;
@@ -20,6 +21,7 @@ namespace SIDIA.ViewModels
         public ICommand DetailCommand { get; set; }
         private INavigationService _navigationService;
         private List<BarangModel> _semuaBarang;
+        private BarangRepository _barangRepository;
         public List<BarangModel> SemuaBarang
         {
             get { return _semuaBarang; }
@@ -27,8 +29,8 @@ namespace SIDIA.ViewModels
         }
         public KelolaBarangViewModel(Frame frame)
         {
-            BarangRepository barangRepository = new BarangRepository();
-            this.SemuaBarang = barangRepository.Getbarang();
+            _barangRepository = new BarangRepository();
+            this.SemuaBarang = _barangRepository.Getbarang();
             _navigationService = new NavigationService(frame);
 
             DetailCommand = new DelegateCommand<BarangModel>(DetailItem);
@@ -37,29 +39,42 @@ namespace SIDIA.ViewModels
         }
         private void DetailItem(object parameter)
         {
-            _navigationService.NavigateTo(typeof(KelolaAdminView));
             var item = parameter as BarangModel;
-            if (item != null)
-            {
-                // Perform edit operations here
-            }
+            Application.Current.Properties["DetailItemKelolaBarang"] = item;
+            _navigationService.NavigateTo(new DetailBarangView());
         }
 
         private void EditItem(object parameter)
         {
             var item = parameter as BarangModel;
-            if (item != null)
-            {
-                // Perform edit operations here
-            }
+            Application.Current.Properties["EditItemKelolaBarang"] = item;
+            _navigationService.NavigateTo(new EditBarangView());
         }
 
         private void DeleteItem(object parameter)
         {
-            var item = parameter as BarangModel;
-            if (item != null)
+            MessageBoxResult messageBoxResult = MessageBox.Show("Apakah anda yakin ?", "Hapus item yang dipilih", MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.No)
             {
-                SemuaBarang.Remove(item);
+                return;
+            }
+            var item = parameter as BarangModel;
+            var index = SemuaBarang.FindIndex(i => i.IdBarang == item.IdBarang);
+            var newBarang = new List<BarangModel>();
+            bool terhapus = false;
+            if (item == null) return;
+            SemuaBarang.ForEach(barang =>
+            {
+                if (barang.IdBarang != item.IdBarang)
+                {
+                    newBarang.Add(barang);
+                }
+            });
+            SemuaBarang = newBarang;
+            terhapus = _barangRepository.DeleteBarang(item.IdBarang.GetValueOrDefault(-1));
+            if (terhapus)
+            {
+                MessageBoxResult result = MessageBox.Show("Berhasil hapus!", "Barang berhasil di hapus");
             }
         }
     }

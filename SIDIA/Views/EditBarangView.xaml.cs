@@ -12,23 +12,26 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Wpf.Ui.Mvvm.Services;
 using SIDIA.ViewModels;
 
 namespace SIDIA.Views
 {
     /// <summary>
-    /// Interaction logic for KelolaBarangView.xaml
+    /// Interaction logic for DetailBarangView.xaml
     /// </summary>
-    public partial class KelolaBarangView : Page
+    public partial class EditBarangView : Page
     {
-        public KelolaBarangView()
+        public EditBarangView()
         {
             InitializeComponent();
+            EditBarangViewModel viewModel = new EditBarangViewModel();
+            DataContext = viewModel;
+        }
 
-            var frame = (Frame)Application.Current.Properties["RootFrame"];
-            var kelolaBarangViewModel = new KelolaBarangViewModel(frame);
-            DataContext = kelolaBarangViewModel;
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            var frame = (Frame) Application.Current.Properties["RootFrame"];
+            frame.Navigate(new KelolaBarangView());
         }
     }
 }

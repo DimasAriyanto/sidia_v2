@@ -1,0 +1,88 @@
+﻿<Page x:Class="SIDIA.Views.EditBarangView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:local="clr-namespace:SIDIA.Views"
+      mc:Ignorable="d" 
+      d:DataContext="{d:DesignInstance local:EditBarangView,
+                                     IsDesignTimeCreatable=False}" d:DesignWidth="800"
+      Title="EditBarangView" Height="600">
+
+    <Grid Margin="18,0" ScrollViewer.VerticalScrollBarVisibility="Visible">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <VirtualizingStackPanel>
+            <ui:Button Icon="Backspace24" Content="Kembali" Click="Back_Click"/>
+        </VirtualizingStackPanel>
+        <VirtualizingStackPanel Grid.Row="1" Margin="0,0,0,-62">
+            <TextBlock
+                Margin="0,8,0,0"
+                Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                Text="ID Barang" />
+            <ui:TextBox
+                Grid.Column="0"
+                Margin="0,8,4,0"
+                IsEnabled="False"
+                PlaceholderText="{Binding Barang.IdBarang}" />
+
+            <TextBlock
+                Margin="0,8,0,0"
+                Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                Text="Nama Barang" />
+            <ui:TextBox
+                Grid.Column="0"
+                Margin="0,8,4,0"
+                Text="{Binding Barang.NamaBarang}" 
+                PlaceholderText="Masukkan nama barang..."/>
+
+            <TextBlock
+                Margin="0,8,0,0"
+                Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                Text="Satuan" />
+            <ui:TextBox
+                Grid.Column="0"
+                Margin="0,8,4,0"
+                Text="{Binding Barang.Satuan}" 
+                PlaceholderText="Masukkan satuan..."/>
+
+            <TextBlock
+                Margin="0,8,0,0"
+                Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                Text="Harga" />
+            <ui:TextBox
+                Grid.Column="0"
+                Margin="0,8,4,0"
+                Text="{Binding Barang.Harga}" 
+                PlaceholderText="Masukkan harga..."/>
+
+            <TextBlock
+                Margin="0,8,0,0"
+                Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                Text="Stok" />
+            <ui:TextBox
+                Grid.Column="0"
+                Margin="0,8,4,0"
+                Text="{Binding Barang.Stok}" 
+                PlaceholderText="Masukkan stok..."/>
+
+            <TextBlock
+                Margin="0,8,0,0"
+                Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                Text="Tanggal Masuk" />
+            <DatePicker Text="{Binding Barang.TanggalMasuk}"
+                    Margin="0,8,4,0"/>
+
+            <TextBlock
+                Margin="0,8,0,0"
+                Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                Text="Tanggal Keluar" />
+            <DatePicker Text="{Binding Barang.TanggalKeluar}"
+                    Margin="0,8,4,0"/>
+            <ui:Button Appearance="Info" Content="Simpan" Margin="0,14"/>
+        </VirtualizingStackPanel>
+    </Grid>
+</Page>

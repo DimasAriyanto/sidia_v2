@@ -18,5 +18,10 @@ namespace SIDIA.Repositories
             string sql = "select id_barang IdBarang, nama_barang NamaBarang, harga, satuan, stok, tanggal_keluar TanggalKeluar, tanggal_masuk TanggalMasuk from barang";
             return this.getConnection().Query<BarangModel>(sql).ToList();
         }
+
+        public bool DeleteBarang(int IdBarang)
+        {
+            return true;
+        }
     }
 }

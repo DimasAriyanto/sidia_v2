@@ -29,6 +29,7 @@ namespace SIDIA.Views
             InitializeComponent();
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
 
+            Application.Current.Properties["RootFrame"] = GetFrame();
             Navigate(typeof(HomePageView));
             
         }

@@ -10,6 +10,8 @@ namespace SIDIA.Services
     {
         void NavigateTo(Type pageType);
         void NavigateTo(Type pageType, object parameter);
+        void NavigateTo(object content, object parameter);
+        void NavigateTo(object content);
         void GoBack();
     }
 }

@@ -7,6 +7,7 @@ using System.Windows;
 using System.Net;
 using System.Windows.Input;
 using SIDIA.Repositories;
+using SIDIA.ViewModels;
 
 namespace SIDIA.Views
 {
@@ -18,6 +19,9 @@ namespace SIDIA.Views
         public LoginView()
         {
             InitializeComponent();
+            LoginViewModel viewModel = new LoginViewModel();
+            DataContext = viewModel;
+            viewModel.CloseViewEvent += (s, e) => Close();
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
